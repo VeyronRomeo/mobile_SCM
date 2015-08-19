@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+<!--    <constant name="struts.enable.DynamicMethodInvocation" value="false" />http://localhost:8080/exam/login!checkLogin.action
+login!checkLogin    login是我的struts.properties配置文件中的一个action的名字 而checkLogin是这个action类里的一个方法。
+我们可以使用action名 + 感叹号 + 方法名进行方法调用  这个在开发阶段开启可以加速我们开发人员的开发调试，但是在项目完成时还是设为false的好。毕竟直接访问类的方法是不安全的。
+至于xml中的通配符(*)在设为 false时还是可以用的-->
+<!--    开发模式 作用：貌似不刷新服务器可以看到修改后的结果-->
+    <constant name="struts.devMode" value="false" />  
+<!--    将*.action改为*.do-->
+    <constant name="struts.action.extension" value="do">
+
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="welcome">
+            <result name="success">/index.jsp</result>
+        </action>
+
+        
+<!--        <action name="index">-->
+<!--            <result type="redirectAction">-->
+<!--                <param name="actionName">HelloWorld</param>-->
+<!--                <param name="namespace">/example</param>-->
+<!--            </result>-->
+<!--        </action>-->
+    </package>
+
+<!--    <include file="example.xml"/>-->
+
+
+</struts>
